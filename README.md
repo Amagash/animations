@@ -12,4 +12,8 @@ You can create your first animation by running the following command in the term
 manim -pql scene.py AnimatedSquareToCircle
 ```
 
-This will generate a media folder/videos where the videos will be saved in mp4.
+This will generate a media folder/videos where the videos will be saved in mp4. The flag -p tells manim to play the scene once it’s rendered, and the -ql flag tells manim to render the scene in low quality. Replace -ql by -qh for high quality.
+
+```
+manim -pqh scene.py AnimatedSquareToCircle
+```
