@@ -1,4 +1,5 @@
 from manim import *
+from manim.utils.unit import Pixels
 
 
 def create_service(service_name, service_color):
@@ -11,7 +12,8 @@ def create_service(service_name, service_color):
 
 def create_ensemble(ensemble_name, ensemble_color):
     result = VGroup()  # create a VGroup
-    rect = Rectangle(color=ensemble_color)
-    text = Text(ensemble_name).move_to(rect.get_corner(np.array((-1.0, 1.0, 0.0))))  # create text
-    result.add(rect, text)  # add both objects to the VGroup
+    rec = Rectangle(color=ensemble_color)
+    text=Text(ensemble_name, font_size=20).align_to(rec, UL).shift(10 * Pixels * DR)
+
+    result.add(rec, text)  # add both objects to the VGroup
     return result
